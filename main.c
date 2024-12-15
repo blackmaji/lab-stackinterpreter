@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-#include "interpret.c"
 #include "interpret.h"
 #include "stack.h"
 
@@ -23,6 +22,7 @@ static void repl()
 
 
 int main () {
+  s_init();
   repl();
   return 0;
 }

@@ -9,7 +9,7 @@ struct stack
 };
 
 
-void new_stack(int size){
+Stack* new_stack(int size){
     Stack *s = calloc(1,sizeof(Stack));
     s->values = calloc(size, sizeof(int));
     s->top = 0;
