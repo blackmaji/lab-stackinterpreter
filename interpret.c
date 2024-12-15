@@ -30,6 +30,14 @@ void interpret (const char *source) {
         int arg1 = stack_pop(s);
         int arg2 = stack_pop(s);
         stack_push(s, arg1-arg2);
+    } else if (strcmp(op, "div") == 0){
+        int arg1 = stack_pop(s);
+        int arg2 = stack_pop(s);
+        stack_push(s, arg1/arg2);
+    } else if (strcmp(op, "mul") == 0){
+        int arg1 = stack_pop(s);
+        int arg2 = stack_pop(s);
+        stack_push(s, arg1*arg2);
     }
 
     stack_print(s);

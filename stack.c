@@ -27,7 +27,7 @@ int stack_pop (Stack* s){
 
 void stack_print(Stack* s){
     printf("============ STACK ===========\n");
-    for(int i=0; i < s->top; i++){
+    for(int i = s->top - 1; i >= 0; i--){
         printf("%d\n", s->values[i]);
     }
     printf("============ STACK ===========\n");
