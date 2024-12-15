@@ -22,6 +22,15 @@ void interpret (const char *source) {
     if(strcmp(op, "push") == 0){
         int value = atoi(arg);
         stack_push(s, value);
+    } else if (strcmp(op, "add") == 0){
+        int arg1 = stack_pop(s);
+        int arg2 = stack_pop(s);
+        stack_push(s, arg1+arg2);
+    } else if (strcmp(op, "sub") == 0){
+        int arg1 = stack_pop(s);
+        int arg2 = stack_pop(s);
+        stack_push(s, arg1-arg2);
     }
+
     stack_print(s);
 }
