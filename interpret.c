@@ -19,4 +19,9 @@ void interpret (const char *source) {
     printf("operação: %s\n", op);
     printf("argumento: %s\n",  arg);
 
+    if(strcmp(op, "push") == 0){
+        int value = atoi(arg);
+        stack_push(s, value);
+    }
+    stack_print(s);
 }
