@@ -16,8 +16,8 @@ void interpret (const char *source) {
     char arg[10];
 
     sscanf (source, "%s%s", op, arg);
-    printf("operação: %s\n", op);
-    printf("argumento: %s\n",  arg);
+    //printf("operação: %s\n", op);
+    //printf("argumento: %s\n",  arg);
 
     if(strcmp(op, "push") == 0){
         int value = atoi(arg);
@@ -38,7 +38,8 @@ void interpret (const char *source) {
         int arg1 = stack_pop(s);
         int arg2 = stack_pop(s);
         stack_push(s, arg1*arg2);
+    } else if (strcmp(op, "print") == 0){
+        printf("%d\n", stack_pop(s));
     }
-
-    stack_print(s);
+    //stack_print(s);
 }
