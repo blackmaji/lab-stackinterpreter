@@ -1,6 +1,8 @@
 #include <stdio.h>
 
+#include "interpret.c"
 #include "interpret.h"
+#include "stack.h"
 
 static void repl()
 {
@@ -20,10 +22,7 @@ static void repl()
 }
 
 
-
-
 int main () {
-
-    repl();
-    return 0;
+  repl();
+  return 0;
 }
