@@ -23,3 +23,17 @@ static struct node* list_find (List* l, char* key){
     }
     return NULL;
 }
+
+List* new_list(){
+    list* l = calloc (l, sizeof(List));
+    l->first = NULL;
+    return l;
+}
+
+void list_append(List* l, char* key, int value){
+    struct node* node = calloc(l, sizeof(struct node));
+    strcpy(node->key, key);
+    node->value = value;
+    node->next = l->first;
+    l->first = node;
+}
