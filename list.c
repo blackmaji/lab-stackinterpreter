@@ -30,10 +30,25 @@ List* new_list(){
     return l;
 }
 
-void list_append(List* l, char* key, int value){
+void list_append (List* l, char* key, int value){
     struct node* node = calloc(l, sizeof(struct node));
     strcpy(node->key, key);
     node->value = value;
     node->next = l->first;
     l->first = node;
+}
+
+int list_get (List* l, char* key){
+    struct node* n;
+    if ((n = list_find(l, key)) != NULL){
+        return n->value;
+    }
+    return -1;
+}
+
+void list_set (List* l, char* key, int value){
+    struct node* n;
+    if ((n = list_find(l, key)) != NULL){
+        n->value = value;
+    }
 }
