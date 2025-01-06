@@ -52,3 +52,15 @@ void list_set (List* l, char* key, int value){
         n->value = value;
     }
 }
+
+int list_exist (List* l, char* key){
+    return list_find(l,key) != NULL;
+}
+
+void list_print (List* l){
+    struct node* next = l->first;
+    while (next){
+        printf("%s -> %d\n",next->key, next->value);
+        next = next->next:
+    }
+}
