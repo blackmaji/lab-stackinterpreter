@@ -12,7 +12,7 @@ struct node{
 
 struct list{
     struct node* first;
-}
+};
 
 static struct node* list_find (List* l, char* key){
     struct node* next = l-> first;
@@ -25,13 +25,13 @@ static struct node* list_find (List* l, char* key){
 }
 
 List* new_list(){
-    list* l = calloc (l, sizeof(List));
+    List* l = calloc (1, sizeof(List));
     l->first = NULL;
     return l;
 }
 
 void list_append (List* l, char* key, int value){
-    struct node* node = calloc(l, sizeof(struct node));
+    struct node* node = calloc(1, sizeof(struct node));
     strcpy(node->key, key);
     node->value = value;
     node->next = l->first;
@@ -61,6 +61,6 @@ void list_print (List* l){
     struct node* next = l->first;
     while (next){
         printf("%s -> %d\n",next->key, next->value);
-        next = next->next:
+        next = next->next;
     }
 }

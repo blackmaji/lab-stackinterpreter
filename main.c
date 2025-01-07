@@ -20,7 +20,6 @@ static void repl()
   }
 }
 
-
 int main () {
   s_init();
   repl();
